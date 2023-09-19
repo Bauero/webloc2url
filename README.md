@@ -1,12 +1,12 @@
 # webloc2url-raycast-script
 ## Description / backstory
 
-I was frustrated with the way you create webpage link on Mac (why MacOS can't work as other operation systems and use URL???) <br><br> Anyway, I've begin serching web, looking for a solution, which eventually led me to the creation of [flagsoft](https://github.com/flagsoft). However, that was not satisfactory for my needs.
+I was frustrated with the way you create webpage link on Mac (why MacOS can't work as other operation systems and use URL???) <br><br> Anyway, I've begin serching web, looking for a solution, which eventually led me to the creation of [flagsoft](https://github.com/flagsoft). 
 ## Why I've made this? 🤷🏼‍♂️
 Inspired by the way [Raycast Visual Studion extension](https://github.com/raycast/extensions/tree/4978a558a7bf210f3f3e503f5d37beaf3ef9af8c/extensions/open-in-visual-studio-code) works , I've decided to combine this idea with the script, to create an ***ultimate*** solution, which can be executed in current active folder, and run as a user script through Raycast. 
 
 ## How should / does it work?
-After proper configuration (aka. 'On my machine') it should work like this.
+After proper configuration it should work like this: (aka. 'it works on my machine')
 
 1. You add or have webloc file(s) in a directory
 
@@ -38,8 +38,7 @@ If you would like to have this working on your machine too, here's the instructi
 <br>| `WARNING` | &nbsp; Top comments - those are for Raycast, to properly store logo and name of the file - in the source code I have my own - you can create your own
 <br>| `WARNING` | &nbsp; DO NOT DELETE `#!bin/bash` - it is calling bash to execute the script without it it won't work
 
-
-At this point you're almost done - to allow execution of script, there might be needed change of privlidges of this file, to allow execution of bash script - one can do it using terminal, and `chmod +x 'name of your file'` command
+<br> At this point you're almost done - to allow execution of script, there might be needed change of privlidges of this file, to allow execution of bash script - one can do it using terminal, and `chmod +x 'name of your file'` command
 
 ## Sources
 
