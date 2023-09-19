@@ -11,6 +11,7 @@
 # Documentation:
 # @raycast.description Converts webloc file into url
 
+## Apple script - get path to the current active directory
 finderWindowPath=$(osascript <<EOD
 if application "Finder" is running and frontmost of application "Finder" then
   tell app "Finder"
@@ -21,17 +22,16 @@ if application "Finder" is running and frontmost of application "Finder" then
 else 
   error "Could not get the selected Finder window"
 end if
-EOD
-)
+EOD )
 
+## Focus on current active diretory
 cd $finderWindowPath
 
-#source /Users/piotrbauer/Developer/programy/webloc2url/weblock2url.sh
-
+## Create a temporary file, to store location of all liks to change
 TEMP_LIST="webloc2url-list.txt.$$.tmp"
-
 find . "(" -name "*.webloc" ")" > $TEMP_LIST
 
+## For each link in the list
 while read p; do
 
 	echo "Found webloc: $p"                        ## $p: ./some/dir/link.webloc
@@ -40,7 +40,6 @@ while read p; do
 	FILENAME_BASE=$(basename "$FILENAME" .webloc)  ##     link
 
 	TEMP_FILE="$DIR/temp_link.url.$$.tmp"            ## ./some/dir/temp_link.url.2342343.tmp
-
 	FILEPATH_url="${DIR}/${FILENAME_BASE}.url"     ## ./some/dir/link.url
 
 	## remove any "._XY" files - AppleDouble encoded Macintosh file
@@ -48,6 +47,7 @@ while read p; do
 	dot_clean -m "$DIR"
 
 	LINK=`plutil -convert xml1 -o - "$p" | grep "string" | sed "s/<string>//" | sed "s/<\/string>//" | sed "s/	//"`
+
 	## NOTE: last sed contains a TAB caracter
 	echo " - Link is: $LINK"
 
@@ -55,23 +55,21 @@ while read p; do
 	#echo "** FILEPATH_url_q: $FILEPATH_url_q"
 
 	echo " - Create Windows url file"
-
 	echo "[InternetShortcut]" > "${TEMP_FILE}"
 	echo "URL=$LINK" >> "${TEMP_FILE}"
 
 	#echo "${TEMP_FILE} -> ${FILEPATH_url}"
 	mv "${TEMP_FILE}" "${FILEPATH_url}"
-
 	echo ""
 
+	## Remove oryginal file - if you commment line below oryginal
+	## files won't be automatically deleted from it's directories
     rm "$p"
 
 done < $TEMP_LIST
 
+## Cleanup
 rm -f $TEMP_LIST
-
 echo "all done."
-
-## EOF.
 
 exit
