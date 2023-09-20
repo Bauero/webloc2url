@@ -1,9 +1,6 @@
 # webloc2url-raycast-script
 ## Description / backstory
 
-# webloc2url-raycast-script
-## Description / backstory
-
 I was frustrated with the way you create webpage link on Mac (why MacOS can't work as other operation systems and use URL???) <br><br> Anyway, I've begin serching web, looking for a solution, which eventually led me to the creation of [flagsoft](https://github.com/flagsoft). His / Hers project was a big step in a good direction (script to automatically crete url's in for every webloc file in a given directory), but was not enough for me. Thus, I've decided to make my own wersion which can be integrated with [Raycast](https://github.com/raycast)
 ## Why I've made this? 🤷🏼‍♂️
 Inspired by the way [Raycast Visual Studion extension](https://github.com/raycast/extensions/tree/4978a558a7bf210f3f3e503f5d37beaf3ef9af8c/extensions/open-in-visual-studio-code) works , I've decided to combine this idea with the script, to create an ***ultimate*** solution, which can be executed in current active folder, and run as a user script through Raycast. 
@@ -88,7 +85,7 @@ If you would like to have this working on your machine too, here's the instructi
 <br>| `WARNING` | &nbsp; Top comments - those are for Raycast, to properly store logo and name of the file - in the source code I have my own - you can create your own
 <br>| `WARNING` | &nbsp; DO NOT DELETE `#!bin/bash` - it is calling bash to execute the script without it it won't work
 
-<br> At this point you're almost done - to allow execution of script, there might be needed change of privlidges of this file, to allow execution of bash script - one can do it using terminal, and `chmod +x 'name of your file'` command
+<br> At this point you're almost done - to allow execution of script, there might be needed a change in privlidges of this file, to allow execution of bash script - one can do it using terminal, and `chmod +x 'name of your file'` command
 
 ## Sources
 
@@ -96,5 +93,5 @@ If you would like to have this working on your machine too, here's the instructi
 
 **The GUI adaptation of the oryginal** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; https://github.com/anonymousaga/webloc-to-url-mac-app/
 
-**The inspiration for the way it works**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Open in Visula Studio](https://github.com/raycast/extensions/tree/4978a558a7bf210f3f3e503f5d37beaf3ef9af8c/extensions/open-in-visual-studio-code)
+**The inspiration for the way it works**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Open in Visual Studio Code](https://github.com/raycast/extensions/tree/4978a558a7bf210f3f3e503f5d37beaf3ef9af8c/extensions/open-in-visual-studio-code)
 
